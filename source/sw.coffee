@@ -1,0 +1,23 @@
+### Hello! ###
+
+cacheName = 'hello-pwa'
+filesToCache = [
+  '/source/index.html'
+  '/source/img'
+]
+
+### Start the service worker and cache all of the app's content ###
+
+self.addEventListener 'install', (e) ->
+  e.waitUntil caches.open(cacheName).then((cache) ->
+    cache.addAll filesToCache
+  )
+  return
+
+### Serve cached content when offline ###
+
+self.addEventListener 'fetch', (e) ->
+  e.respondWith caches.match(e.request).then((response) ->
+    response or fetch(e.request)
+  )
+  return

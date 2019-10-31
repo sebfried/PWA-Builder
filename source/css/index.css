@@ -67,139 +67,20 @@
   }
 }
 body {
-  width: 100%;
-  color: #111;
+  font-family: sans-serif;
 }
-.standard {
-  width: 100%;
-  margin-left: 0;
-}
-.transition.all {
-  transition-property: all;
-}
-.transition.left {
-  transition-property: left;
-}
-.transition.ms600 {
-  transition-duration: 600ms;
-}
-.transition.ms6000 {
-  transition-duration: 6000ms;
-}
-.transition.ease {
-  transition-timing-function: ease;
-}
-.img-container {
-  background-size: 100%;
-  background-repeat: repeat;
-  overflow: hidden;
-  margin: 10px;
-}
-img {
-  opacity: 0;
-  width: 100%;
-}
-img.initial,
-img.loaded,
-img.error {
-  opacity: 1;
-}
-img:not(.initial) {
-  transition: opacity 1s;
-}
-.noscript img {
-  opacity: 1;
-}
-.noscript img[data-src] {
-  display: none;
-}
-nav.standard {
-  width: 400px;
+html,
+.fullscreen {
+  display: flex;
   height: 100%;
-  left: -400px;
-  background-color: #eee;
-  background-size: 600px;
-  background-repeat: repeat;
-  position: fixed;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
-nav.standard ul {
-  list-style: none;
-}
-nav.standard a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #eee;
-  display: block;
-  transition: 0.3s;
-}
-nav.standard a:hover {
-  color: #9bc53d;
-}
-nav.standard .navbtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-input.hidden {
-  display: none;
-}
-input#buttonA:checked ~ nav {
-  left: 0;
-}
-input#buttonA:checked ~ .standard:not(nav) {
-  margin-left: 400px;
-  width: auto;
-}
-input#buttonA:checked ~ header .button.A.toggle {
-  background: rgba(1,1,1,0.9);
-}
-input#buttonA:checked ~ header .button.A.toggle:before {
-  content: "close MENU";
-}
-.button {
-  cursor: pointer;
-  position: absolute;
-  width: fit-content;
-  margin: 10px 10px;
-  padding: 7px 11px;
-  top: 0;
-  right: 0;
-  background: #32cd32;
-  color: #fff;
-  font-size: 12px;
+.container {
+  margin: auto;
   text-align: center;
 }
-.button:before {
-  content: "CSS Content";
-}
-.button.A.toggle:before {
-  content: "open MENU";
-}
-.button.A.close:before {
-  content: "X";
-}
-header.standard {
-  height: 53px;
-  background-color: #5bc0eb;
-}
-section.main.standard {
-  height: 100vh;
-  background-color: #fde74c;
-}
-section.main.standard h1 {
-  color: #333;
-  margin: 0;
-  padding: 10px;
-}
-section.main.standard h2 {
-  color: #333;
-  margin: 0;
-  padding: 10px;
-}
-footer.standard {
-  height: 40px;
-  background-color: #5bc0eb;
+.title {
+  font-size: 3rem;
 }
