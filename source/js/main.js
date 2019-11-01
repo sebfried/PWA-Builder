@@ -2,9 +2,20 @@
 (function() {
   window.onload = function() {
     'use strict';
+    var app2valueBurger, burgerValue;
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js');
+      navigator.serviceWorker.register('./sw.js').then(function(registration) {
+        console.log('Service Worker Registered', registration);
+      }).catch(function(err) {
+        console.log('Service Worker Failed to Register', err);
+      });
     }
+    console.log('Local Storage Test in burger:');
+    localStorage.setItem('burger', 'burger storage works!');
+    burgerValue = localStorage.getItem('burger');
+    console.log('burger: ' + burgerValue);
+    app2valueBurger = localStorage.getItem('app2');
+    return console.log('storage from app2: ' + app2valueBurger);
   };
 
 }).call(this);
