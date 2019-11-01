@@ -1,9 +1,9 @@
 ### Hello! ###
 
-cacheName = 'hello-pwa'
+cacheName = 'hello-storage'
 filesToCache = [
-  '/index.html'
-  '/img/icon.png'
+  '/app2/index.html'
+  '/app2/img/icon.png'
 ]
 
 ### Start the service worker and cache all of the app's content ###

@@ -5,5 +5,6 @@ module.exports = {
         key: "/Users/sebastian/HTTPS/localhost+1-key.pem",
         cert: "/Users/sebastian/HTTPS/localhost+1.pem"
     },
-    startPath: "source"
+    startPath: "",
+    server: "./source"
 };
