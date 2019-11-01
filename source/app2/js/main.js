@@ -15,7 +15,17 @@
     app2value = localStorage.getItem('app2');
     console.log(app2value);
     burgerValueApp2 = localStorage.getItem('burger');
-    return console.log('value from burger-page: ' + burgerValueApp2);
+    console.log('value from burger-page: ' + burgerValueApp2);
+    return;
+    return localStorage.setItem('app2Counter', 1);
+  };
+
+  this.app2Clicker = function() {
+    var app2Click;
+    app2Click = localStorage.getItem('app2Counter');
+    app2Click++;
+    localStorage.setItem('app2Counter', app2Click);
+    document.getElementById('app2-counter').innerHTML = "app2 Counter: " + app2Click;
   };
 
 }).call(this);

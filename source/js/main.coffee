@@ -13,3 +13,13 @@ window.onload = ->
     console.log('burger: ' + burgerValue)
     app2valueBurger = localStorage.getItem('app2')
     console.log('storage from app2: ' + app2valueBurger)
+    return
+
+    localStorage.setItem('burgerCounter', 1)
+
+this.burgerClicker = () -> 
+    burgerClick = localStorage.getItem('burgerCounter')
+    burgerClick++
+    localStorage.setItem('burgerCounter', burgerClick)
+    document.getElementById('burger-counter').innerHTML = "burger Counter: " + burgerClick
+    return
