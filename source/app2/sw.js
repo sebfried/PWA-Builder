@@ -5,7 +5,7 @@
 
   cacheName = 'hello-storage';
 
-  filesToCache = ['/app2/index.html', '/app2/img/icon.png'];
+  filesToCache = ['/app2/manifest.json', '/app2/favicon.ico', '/app2/index.html', '/app2/img/icon.png'];
 
   /* Start the service worker and cache all of the app's content */
   self.addEventListener('install', function(e) {

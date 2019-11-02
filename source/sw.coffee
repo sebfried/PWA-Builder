@@ -2,6 +2,8 @@
 
 cacheName = 'hello-pwa'
 filesToCache = [
+  '/manifest.json'
+  '/favicon.ico'
   '/index.html'
   '/img/icon.png'
 ]

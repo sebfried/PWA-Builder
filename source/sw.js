@@ -5,7 +5,7 @@
 
   cacheName = 'hello-pwa';
 
-  filesToCache = ['/index.html', '/img/icon.png'];
+  filesToCache = ['/manifest.json', '/favicon.ico', '/index.html', '/img/icon.png'];
 
   /* Start the service worker and cache all of the app's content */
   self.addEventListener('install', function(e) {
