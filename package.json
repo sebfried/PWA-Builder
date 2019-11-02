@@ -1,6 +1,6 @@
 {
   "name": "pwa-builder",
-  "version": "0.1.0",
+  "version": "0.0.4",
   "description": "A Progressive Web App Builder",
   "author": "Sebastian W. Friedrich",
   "license": "EUPL-1.2",
@@ -9,9 +9,10 @@
     "url": "git+https://github.com/sebfried/PWA-Builder.git"
   },
   "scripts": {
-    "test": "npm-run-all vendor && concurrently npm:watch-stylus npm:watch-coffee npm:watch-pug-cli npm:browser-sync-test",
+    "test": "npm start",
+    "start": "npm-run-all vendor && concurrently npm:watch-stylus npm:watch-coffee npm:watch-pug-cli npm:browser-sync-start",
     "build": "npm-run-all vendor stylus coffee purgecss pug-cli www-dist browser-sync-build",
-    "browser-sync-test": "browser-sync start --files 'source/*.html' --browser 'google chrome' --config config/browser-sync.config.js",
+    "browser-sync-start": "browser-sync start --files 'source/*.html' --browser 'google chrome' --config config/browser-sync.config.js",
     "browser-sync-build": "browser-sync start --server './www' --files 'www/*.html' --browser 'google chrome' --startPath '' --no-notify",
     "www-dist": "npm-run-all rm-www-all minifier ncp-img ncp-font",
     "rm-www-all": "rimraf www/*",
