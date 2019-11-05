@@ -7,19 +7,34 @@ window.onload = ->
         ).catch (err) ->
             console.log 'Service Worker Failed to Register', err
             return
-    console.log('Local Storage Test in burger:')
-    localStorage.setItem('burger', 'burger storage works!')
-    burgerValue = localStorage.getItem('burger')
-    console.log('burger: ' + burgerValue)
-    app2valueBurger = localStorage.getItem('app2')
-    console.log('storage from app2: ' + app2valueBurger)
     return
 
-    localStorage.setItem('burgerCounter', 1)
-
-this.burgerClicker = () -> 
-    burgerClick = localStorage.getItem('burgerCounter')
-    burgerClick++
-    localStorage.setItem('burgerCounter', burgerClick)
-    document.getElementById('burger-counter').innerHTML = "burger Counter: " + burgerClick
+this.successClicker = () ->
+    if localStorage.hasOwnProperty('successToday')
+        if localStorage.successToday < getToday()
+            localStorage.successToday = getToday()
+            counterPlus()
+        else
+            console.log('You have allready succeeded today!')
+    else
+        populateStorage()
     return
+
+populateStorage = () ->
+    localStorage.successToday = getToday()
+    localStorage.successCounter = 1
+
+counterPlus = () ->
+    if localStorage.successCounter > 0
+        localStorage.successCounter++
+    else
+        console.log('That should not have happened.')
+    return
+
+getToday = () ->
+    date = new Date()
+    year = date.getFullYear()
+    month = (if (date.getMonth() + 1 < 10) then '0' else '') + (date.getMonth() + 1)
+    day = (if (date.getDate() < 10) then '0' else '') + date.getDate()
+    todayInt = parseInt(year + month + day)
+    return todayInt
