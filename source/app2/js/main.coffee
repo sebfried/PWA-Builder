@@ -1,7 +1,7 @@
 window.onload = ->
     'use strict'
     if 'serviceWorker' of navigator
-        navigator.serviceWorker.register('./sw.js').then((registration) ->
+        navigator.serviceWorker.register('/sw.js').then((registration) ->
             console.log 'Service Worker Registered', registration
             return
         ).catch (err) ->
@@ -17,7 +17,7 @@ window.onload = ->
 
     localStorage.setItem('app2Counter', 1)
 
-this.app2Clicker = () -> 
+this.app2Clicker = () ->
     app2Click = localStorage.getItem('app2Counter')
     app2Click++
     localStorage.setItem('app2Counter', app2Click)
