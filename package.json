@@ -13,13 +13,14 @@
     "start": "npm-run-all vendor && concurrently npm:watch-stylus npm:watch-coffee npm:watch-pug-cli npm:browser-sync-start",
     "build": "npm-run-all vendor stylus coffee purgecss pug-cli www-dist browser-sync-build",
     "browser-sync-start": "browser-sync start --server './source' --files 'source/*.html' --browser 'google chrome' --config config/browser-sync.config.js",
-    "browser-sync-build": "browser-sync start --server './www' --files 'www/*.html' --browser 'google chrome' --startPath '' --no-notify --config config/browser-sync.config.js",
-    "www-dist": "npm-run-all rm-www-all minifier ncp-img",
+    "browser-sync-build": "browser-sync start --server './www' --files 'www/*.html' --browser 'google chrome' --startPath '' --config config/browser-sync.config.js --no-notify",
+    "www-dist": "npm-run-all rm-www-all minifier ncp-img ncp-fav ncp-manifest",
     "rm-www-all": "rimraf www/*",
     "purgecss": "purgecss --out source/css --config config/purgecss.config.js",
     "minifier": "html-minifier  --input-dir source --output-dir www --file-ext html --collapse-whitespace --remove-comments --remove-redundant-attributes --remove-script-type-attributes --use-short-doctype --minify-js true --minify-css true",
     "ncp-img": "ncp source/img www/img",
-    "ncp-font": "ncp source/font www/font",
+    "ncp-fav": "ncp source/favicon.ico www/favicon.ico",
+    "ncp-manifest": "ncp source/manifest.json www/manifest.json",
     "pug-cli": "pug source --pretty",
     "stylus": "stylus source/css/*.styl source/src/4xx/*.styl && npm run pug-cli",
     "coffee": "coffee --compile source && npm run pug-cli",
@@ -38,23 +39,23 @@
     "concurrently": "concurrently"
   },
   "devDependencies": {
-    "animate.css": "^3.7.2",
-    "bootstrap": "^4.3.1",
-    "browser-sync": "^2.26.7",
-    "clean-css": "^4.2.1",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^4.5.3",
+    "browser-sync": "^2.26.13",
+    "clean-css": "^4.2.3",
     "clean-css-cli": "^4.3.0",
-    "coffeescript": "^2.4.1",
-    "concurrently": "^5.0.0",
+    "coffeescript": "^2.5.1",
+    "concurrently": "^5.3.0",
     "html-minifier": "^4.0.0",
     "ncp": "^2.0.0",
     "normalize.css": "^8.0.1",
     "npm-run-all": "^4.1.5",
-    "npm-watch": "^0.6.0",
+    "npm-watch": "^0.7.0",
     "pug-cli": "^1.0.0-alpha6",
-    "purgecss": "^1.4.1",
-    "rimraf": "^3.0.0",
-    "stylus": "^0.54.7",
-    "vanilla-lazyload": "^12.3.0"
+    "purgecss": "^1.4.2",
+    "rimraf": "^3.0.2",
+    "stylus": "^0.54.8",
+    "vanilla-lazyload": "^17.3.0"
   },
   "watch": {
     "stylus": {
@@ -77,7 +78,7 @@
     }
   },
   "dependencies": {
-    "jquery": "^3.4.1",
-    "popper.js": "^1.16.0"
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
   }
 }
