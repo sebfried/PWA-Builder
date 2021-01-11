@@ -1,7 +1,21 @@
 # PWA-Builder
 A Progressive Web App Builder
 
-### Infos für Lenard
-* *npm run build* funktioniert noch nicht
-* HTTPS Konfiguration: config/browser-sync.config.js
-* v0.0.4 XD
+## Development
+
+This project uses pre-processors to generate its source code.
+- [CoffeeScript](https://coffeescript.org/) for Javascript
+- [Stylus](https://stylus-lang.com/) for CSS
+- [Pug](https://pugjs.org/api/getting-started.html) for HTML
+
+### Prerequisites
+
+- Node.js
+- npm
+
+### Run locally
+
+- Install all dependencies: `npm install --no-save`
+- (Optional) HTTPS Configuration: `config/browser-sync.config.js`
+- Start the dev server: `npm start`
+- Coming soon: `npm build`
