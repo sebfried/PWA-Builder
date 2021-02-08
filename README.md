@@ -18,4 +18,4 @@ This project uses pre-processors to generate its source code.
 - Install all dependencies: `npm install --no-save`
 - (Optional) HTTPS Configuration: `config/browser-sync.config.js`
 - Start the dev server: `npm start`
-- Build production app: `npm build`
+- Build production app: `npm run build`
